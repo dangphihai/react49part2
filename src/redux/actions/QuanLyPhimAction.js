@@ -38,7 +38,7 @@ export const layDanhSachPhimAPIAction = () => {
     // Thay vì return về object => middleware thunk cho phép return về 1 function có tham số là hàm dispatch
     return async dispatch => {
         const { data } = await axios({
-            url: 'http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01',
+            url: 'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP09',
             method: 'GET'
         });
         dispatch({
@@ -51,7 +51,7 @@ export const layDanhSachPhimAPIAction = () => {
 export const layChiTietPhimAction = (maPhim) => {
     return async dispatch => {
         const { data } = await axios({
-            url: `http://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maPhim}`,
+            url: `https://movie0706.cybersoft.edu.vn/api/QuanLyRap/LayThongTinLichChieuPhim?MaPhim=${maPhim}`,
             method: 'GET'
         });
         dispatch({

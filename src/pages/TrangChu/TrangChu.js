@@ -42,7 +42,7 @@ export default class TrangChu extends Component {
     componentDidMount() {
         //life cycle này dùng để gọi API từ backend
         Axios({
-            url: 'http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP09',
+            url: 'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP09',
             method: 'GET'
         }).then(res => {
             console.log('ket qua', res.data);

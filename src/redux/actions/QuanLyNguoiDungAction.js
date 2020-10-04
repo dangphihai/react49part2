@@ -1,7 +1,7 @@
 import axios from 'axios'
 import { DOMAIN, TOKEN, USER_LOGIN } from '../../utility/ConfigWeb'
 
-export const dangNhapApiAction = (userLogin) => {
+export const dangNhapApiAction = (userLogin, history) => {
     return async dispatch => {
         try {
             let { data, status } = await axios({
@@ -21,6 +21,9 @@ export const dangNhapApiAction = (userLogin) => {
                 // Lưu vào local storage
                 localStorage.setItem(USER_LOGIN, JSON.stringify(data));
                 localStorage.setItem(TOKEN, data.accessToken)
+
+                // history.push("/");
+                history.goBack();
             }
         } catch (err) {
             console.log(err.response.data)

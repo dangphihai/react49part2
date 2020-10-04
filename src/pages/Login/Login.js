@@ -1,9 +1,11 @@
 import React, { useState } from 'react'
 import {useDispatch} from 'react-redux'
+import {useHistory} from 'react-router-dom'
 import { dangNhapApiAction } from '../../redux/actions/QuanLyNguoiDungAction'
 
 export default function Login(props) {
 
+    let history = useHistory()
 
     let dispatch = useDispatch();
     // const [state, setState] = useState({
@@ -35,7 +37,7 @@ export default function Login(props) {
             // props.history.replace('/home') // thay đổi thành route tương ứng, dùng cho những trang nhập OTP Contact -> Log in -> Home: back -> Contact 
 
             // Gọi api đăng nhập
-            dispatch(dangNhapApiAction(userLogin))
+            dispatch(dangNhapApiAction(userLogin, history))
         // } else {
             // alert('Log in failed!')
         // }

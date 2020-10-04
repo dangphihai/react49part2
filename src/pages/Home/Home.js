@@ -36,7 +36,7 @@ function Home(props) {
 
     useEffect(()=> {
         axios({
-            url: 'http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01',
+            url: 'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP01',
             method: 'GET'
         }).then(res => {
             console.log('ket qua', res.data);
@@ -50,7 +50,7 @@ function Home(props) {
     const getFilmsAPI = async () => { // async function là function bất đồng bộ. Khi gọi nó, các hàm tiếp theo vẫn tiếp tục thực hiện
         try {
             let {data, status}  = await axios({
-                url: 'http://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP09',
+                url: 'https://movie0706.cybersoft.edu.vn/api/QuanLyPhim/LayDanhSachPhim?maNhom=GP09',
                 method: 'GET1'
             }); // Lệnh await bắt buộc các lệnh phía sau phải đợi đến khi hàm này thực thi xong thì mới làm tiếp
             console.log(status)
